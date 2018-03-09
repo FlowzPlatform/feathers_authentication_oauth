@@ -1,0 +1,78 @@
+{
+  "host": "localhost",
+  "port": "3045",
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "820101116e88ce01bdfaae317dfe165dfb62cf88111f4d7d0d754032f5fa38eb89bbe2f4f1c3d59356ab2640a7e8c6739ff6a06e53ac447fe174e017322584c7b88e3971e97e5abdaf6e86f6efe32ae8f4fa11e91679f12c272a484f8256b20abc7d57c00c041bbac9a11021221f73bbac56e31ced2a494a697288f4c2e98c8244a59da5a9a3190cabbf5bcac889b304413829c1b2f2aeee0300eac9fdd56515557540be3911b30606180fa9d1abb0681cc2e57821c9f6ef2520fe582ad64a1d829a60288449fbef3d0db1427e3bf808a4f5edf19bd31ef7c750e64c71edeaef8660953c7ab6071423c20e88af20923f1314dd35112e7691e87dfb46224c6b3e",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "user",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    },
+    "google": {
+      "clientID": "381524561267-3agj2flmlj546qsnufj8d6283e6eismb.apps.googleusercontent.com",
+      "clientSecret": "KFzqxuDKfGnF91QMRHiirZwW",
+      "successRedirect": "SUCCESS_URL",
+      "failureRedirect": "FAILURE_URL",
+      "scope": [
+        "profile openid email"
+      ]
+    },
+    "facebook": {
+      "clientID": "424356457998332",
+      "clientSecret": "5c961094f6a35fc4d1d52d0dc2c54bf1",
+      "successRedirect": "SUCCESS_URL",
+      "failureRedirect": "FAILURE_URL",
+      "scope": [
+        "public_profile",
+        "email"
+      ],
+      "profileFields": [
+        "id",
+        "displayName",
+        "first_name",
+        "last_name",
+        "email",
+        "gender",
+        "profileUrl",
+        "birthday",
+        "picture",
+        "permissions"
+      ]
+    },
+    "github": {
+      "clientID": "a95e5e17ff60e99928ce",
+      "clientSecret": "b4dbe5e7a31baae968a5fdae14e6322553f702e0",
+      "successRedirect": "SUCCESS_URL",
+      "failureRedirect": "FAILURE_URL",
+      "scope": "user:email"
+    },
+    "cookie": {
+      "enabled": true,
+      "name": "feathers-jwt",
+      "httpOnly": false,
+      "secure": false
+    }
+  },
+  "mongodb": "MONGODB" /*mongodb://localhost:27017/feathers_demo_oauth"*/
+}
